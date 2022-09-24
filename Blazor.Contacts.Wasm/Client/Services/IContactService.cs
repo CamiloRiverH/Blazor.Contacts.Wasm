@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Blazor.Contacts.Wasm.Client.Services;
+using Blazor.Contacts.Wasm.Shared;
 
 namespace Blazor.Contacts.Wasm.Client.Services
 {
-    interface IContactService
+    public interface IContactService
     {
+        Task SaveContact(Contact contact);
+        Task DeleteContact(int id);
+        Task<IEnumerable<Contact>> GetAll();
+        Task<Contact> GetDetails(int id);
     }
 }
